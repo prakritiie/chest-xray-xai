@@ -1,0 +1,24 @@
+# Core deep learning framework.
+# TensorFlow 2.17.0 transitively installs Keras 3.14.1 and numpy 1.26.4;
+# numpy is pinned explicitly here as well since src/ and evaluate.py rely on
+# it directly for array manipulation.
+tensorflow==2.17.0
+numpy==1.26.4
+
+# Image processing -- used by src/explainability.py for Grad-CAM heatmap
+# resizing, color mapping, and overlay compositing, and by app.py /
+# src/data_pipeline.py for reading uploaded images.
+opencv-python-headless==4.11.0.86
+Pillow==12.1.1
+
+# Visualization -- training curves (train.py), confusion matrix and ROC
+# curve plots (evaluate.py).
+matplotlib==3.10.8
+seaborn==0.13.2
+
+# Evaluation metrics (evaluate.py): accuracy, precision, recall, F1, ROC-AUC,
+# confusion matrix, classification report.
+scikit-learn==1.8.0
+
+# Web UI (app.py). Requires >=1.30 for `use_container_width` on `st.image`.
+streamlit==1.58.0
