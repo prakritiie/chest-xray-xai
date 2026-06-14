@@ -177,31 +177,40 @@ tes set performance metrics (multi class)
 
 Overall Accuracy:     -    0.8638
 
-Per-class metrics:
-Class              Precision      Recall    F1-Score
-COVID19               0.7123      0.9811      0.8254
-NORMAL                0.9326      0.7094      0.8058
-PNEUMONIA             0.8798      0.9385      0.9082
-TURBERCULOSIS         0.9677      0.7317      0.8333
+### 1. Per-Class Performance Summary
 
-Confusion Matrix (rows = actual, columns = predicted):
-actual \ pred       COVID19      NORMAL   PNEUMONIA  TURBERCULO
-COVID19                104           0           1           1
-NORMAL                  19         166          49           0
-PNEUMONIA               12          12         366           0
-TURBERCULOSIS           11           0           0          30
+| Class | Precision | Recall (Sensitivity) | F1-Score | Test Support |
+| :--- | :---: | :---: | :---: | :---: |
+| **COVID-19** | 0.7123 | **0.9811** | 0.8254 | 106 |
+| **NORMAL** | 0.9326 | 0.7094 | 0.8058 | 234 |
+| **PNEUMONIA** | 0.8798 | 0.9385 | 0.9082 | 390 |
+| **TUBERCULOSIS** | **0.9677** | 0.7317 | 0.8333 | 41 |
 
-Full per-class report:
-               precision    recall  f1-score   support
+* **Macro-Recall Summary:** Achieved an overall **0.84 Macro-Recall** and **0.98 OvR ROC-AUC** across all categories.
 
-      COVID19       0.71      0.98      0.83       106
-       NORMAL       0.93      0.71      0.81       234
-    PNEUMONIA       0.88      0.94      0.91       390
-TURBERCULOSIS       0.97      0.73      0.83        41
+---
 
-     accuracy                           0.86       771
-    macro avg       0.87      0.84      0.84       771
- weighted avg       0.88      0.86      0.86       771
+### 2. Confusion Matrix Analytics
+> **Rows = Actual Patient Condition** | **Columns = Model Predicted Diagnosis**
+
+| Actual \ Predicted | COVID-19 | NORMAL | PNEUMONIA | TUBERCULOSIS |
+| :--- | :---: | :---: | :---: | :---: |
+| **COVID-19** | **104** | 0 | 1 | 1 |
+| **NORMAL** | 19 | **166** | 49 | 0 |
+| **PNEUMONIA** | 12 | 12 | **366** | 0 |
+| **TUBERCULOSIS** | 11 | 0 | 0 | **30** |
+
+### 3. Full Multi-Class Classification Report
+
+| Diagnostic Category | Precision | Recall (Sensitivity) | F1-Score | Test Support (Images) |
+| :--- | :---: | :---: | :---: | :---: |
+| **COVID-19** | 0.71 | **0.98** | 0.83 | 106 |
+| **NORMAL** | 0.93 | 0.71 | 0.81 | 234 |
+| **PNEUMONIA** | 0.88 | **0.94** | 0.91 | 390 |
+| **TUBERCULOSIS** | **0.97** | 0.73 | 0.83 | 41 |
+| **Accuracy** | — | — | **0.86** | **771** |
+| **Macro Average** | 0.87 | **0.84** | 0.84 | 771 |
+| **Weighted Average** | 0.88 | 0.86 | 0.86 | 771 |
 
 ---
 
