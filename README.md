@@ -172,9 +172,9 @@ The XAI design rests on four ideas:
 
 `evaluate.py` reports the following on the held-out test set:
 
-================================================================
-TEST SET PERFORMANCE METRICS (MULTI-CLASS)
-================================================================
+
+tes set performance metrics (multi class) 
+
 Overall Accuracy:     -    0.8638
 
 Per-class metrics:
